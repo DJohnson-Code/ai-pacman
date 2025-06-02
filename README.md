@@ -25,5 +25,5 @@ This is a work-in-progress project to explore game development, pathfinding, and
 
 1. Clone the repo:
    ```bash
-   git clone https://github.com/your-username/ai-pacman.git
+   git clone https://github.com/DJohnson-Code/ai-pacman.git
    cd ai-pacman
