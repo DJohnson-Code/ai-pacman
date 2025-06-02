@@ -10,6 +10,7 @@ class GameController:
         # Create the game window with specified screen size
         self.screen = pygame.display.set_mode(constants.SCREENSIZE, 0, 32)
         self.background = None  # Placeholder for the background surface
+        self.clock = pygame.time.Clock()  # Ensure consistent frame rate
 
     # Sets up the background color/surface
     def setBackground(self):
@@ -24,6 +25,7 @@ class GameController:
 
     # This runs every frame (like a heartbeat for the game)
     def update(self):
+        dt = self.clock.tick(30) / 1000.0
         self.checkEvents()  # Handle user input or window close
         self.render()  # Redraw the screen
 
