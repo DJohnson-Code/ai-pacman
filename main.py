@@ -1,6 +1,7 @@
 import pygame  # Main Pygame library for handling graphics and events
 import pygame.locals  # Access constants like QUIT, KEYDOWN, etc.
 import constants  # Import our custom constants (screen size, colors, etc.)
+from pacman import Pacman
 
 
 # GameController controls the setup, update loop, and basic window logic
@@ -22,10 +23,12 @@ class GameController:
     # Called once when the game starts
     def startGame(self):
         self.setBackground()  # Setup the background (currently black)
+        self.pacman = Pacman()
 
     # This runs every frame (like a heartbeat for the game)
     def update(self):
         dt = self.clock.tick(30) / 1000.0
+        self.pacman.update(dt)
         self.checkEvents()  # Handle user input or window close
         self.render()  # Redraw the screen
 
@@ -37,6 +40,8 @@ class GameController:
 
     # Draws everything to the screen (currently just refreshes the display)
     def render(self):
+        self.screen.blit(self.background, (0, 0))
+        self.pacman.render(self.screen)
         pygame.display.update()  # Update the entire display
 
 
