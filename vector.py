@@ -23,6 +23,11 @@ class Vector2:
         # Used to calculate direction or distance between two positions
         return Vector2(self.x - other.x, self.y - other.y)
 
+    def __div__(self, scalar):
+        if scalar != 0:
+            return Vector2(self.x / float(scalar), self.y / float(scalar))
+        return None
+
     def __truediv__(self, scalar):
         # Divides the vector by a number: (x, y) / scalar
         # Useful for scaling movement down (e.g., averaging, smoothing)
@@ -55,7 +60,7 @@ class Vector2:
     def __str__(self):
         # Returns the vector as a readable string: "(x, y)"
         # So it prints nicely when you use print(vector)
-        return f"({self.x}, {self.y})"
+        return "<" + str(self.x) + ", " + str(self.y) + ">"
 
     def magnitudeSquared(self):
         # Returns the squared length (distance from origin) of the vector
@@ -66,3 +71,9 @@ class Vector2:
         # Returns the exact length (distance from origin) using Pythagoras: √(x² + y²)
         # Useful when you want to know how far apart two vectors are
         return math.sqrt(self.magnitudeSquared())
+
+    def asTuple(self):
+        return self.x, self.y
+
+    def asInt(self):
+        return int(self.x), int(self.y)
