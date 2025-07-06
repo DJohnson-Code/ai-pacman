@@ -4,7 +4,7 @@ from vector import Vector2
 from constants import *
 
 
-class Pacman(object):
+class Pacman:
     def __init__(self):
         self.name = PACMAN
         self.position = Vector2(200, 400)

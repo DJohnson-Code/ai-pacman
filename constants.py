@@ -15,3 +15,6 @@ DOWN = -1
 LEFT = 2
 RIGHT = -2
 PACMAN = 0
+
+WHITE = (255, 255, 255)
+RED = (255, 0, 0)
