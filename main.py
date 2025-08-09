@@ -26,7 +26,7 @@ class GameController:
         self.setBackground()  # Setup the background (currently black)
         self.nodes = NodeGroup()
         self.nodes.setupTestNodes()
-        self.pacman = Pacman()
+        self.pacman = Pacman(self.nodes.nodeList[0])
 
     # This runs every frame (like a heartbeat for the game)
     def update(self):
